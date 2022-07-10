@@ -103,8 +103,8 @@ body {
     padding: 0px 2px;
     font-weight:200;
     display:block;
-    margin-left:3px;
-    margin-right:3px;
+    margin-left:0.5em;
+    margin-right:0.5em;
     width: fit-content;
     max-width: fit-content;
     height:0;
