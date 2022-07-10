@@ -59,14 +59,14 @@ body {
       background: #9696d1;
   }
   to {
-      height:3px;
+      height:1px;
       background: blue; 
   }
 }
 
 .textbox-container:focus-within {
     border-color: blue;
-    outline: 3px solid #0000ff29;
+    outline: rgb(214 214 255) solid 3px;
 }
 
 .textbox-container:focus-within::after {
