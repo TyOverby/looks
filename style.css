@@ -197,3 +197,70 @@ body {
       top 0.05s 0.05s,
       max-height 0.025s 0.05s;
 }
+
+.devbar {
+    background: green;
+    position:absolute;
+    left:0;
+    top:0;
+    overflow:hidden;
+}
+
+.devbar div.background {
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background: repeating-linear-gradient(
+      90deg,
+      white,
+      #f44336 0.5px,
+      #f44336 50.0px,
+      white 50.5px,
+      white 100.0px
+    );
+    z-index: -1;
+    transform:skew(30deg) translateX(-100px);
+    background-origin: -10px, 0px;
+}
+
+.devbar div.container {
+    display:flex;
+
+    animation: marquee 10s linear infinite;
+}
+
+.devbar span {
+    display: inline-flex;
+    justify-content:center;
+    min-width:50px;
+    width:50px;
+
+    font-size:0.8em;
+    padding: 0.3em 1em;
+    font-weight:bold;
+}
+
+.devbar span:nth-child(even) {
+    color:white;
+    text-shadow: 0 0 5px #ffb800cc;
+  /*background:red; */
+}
+
+.devbar span:nth-child(odd) {
+    color: #f44336;
+    text-shadow: 0 0 5px #ff8300a1;
+  /*background:red; */
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100px); }
+}
+
+.devbar {
+    background:white;
+    padding-bottom: 0px;
+    box-shadow: #f5513478 0px 5px 5px;
+}
