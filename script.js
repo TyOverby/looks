@@ -1,26 +1,36 @@
-const sheet = new CSSStyleSheet();
-document.adoptedStyleSheets = [sheet];
+function go(name) {
+    let last = 'a { body: blue; }';
+    const sheet = new CSSStyleSheet();
 
-let last = 'a { body: blue; }';
-
-async function loop() {
-    let next = await fetch('./style.css', {cache: "no-store"});
-    next = await next.text();
-    if (next !== last) {
-        console.log(next);
-        await sheet.replace(next);
-        last = next;
+    async function loop() {
+        let next = await fetch(name, {cache: "no-store"});
+        next = await next.text();
+        if (next !== last) {
+            console.log(next);
+            await sheet.replace(next);
+            last = next;
+        }
+        await new Promise(window.requestAnimationFrame);
     }
-    await new Promise(window.requestAnimationFrame);
+
+    async function run() {
+        while (true) {
+            await loop();
+        }
+    }
+
+    run();
+
+    return sheet;
 }
 
-async function run() {
-    while (true) {
-        await loop();
-    }
-}
-
-run();
+document.adoptedStyleSheets = [
+    go("./style.css"),
+    go("./devbox.css"),
+    go("./textbox.css"),
+    go("./app_container.css"),
+    go("./typography.css"),
+];
 
 
 for (let e of document.querySelectorAll('.growing-textbox')) {

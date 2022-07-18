@@ -1,0 +1,56 @@
+
+.app_container {
+    width:100vw;        
+    height:100vh;        
+    display:grid;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.app_container>.header {
+    display: flex;
+    align-items: baseline;
+    color: #171f48;
+    background:white;
+}
+
+.app_container>.header>.name{
+    font-family: Georgia; 
+    font-size: 2em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-right: 1px dashed #171f48;
+    border-bottom: 1px dashed #171f48;
+    background:white;
+}
+
+.app_container>.header>.aux {
+    padding-left:0.5em;
+    flex-grow:1;
+}
+
+.app_container>.header>.aux>.selected ,
+.app_container>.header>.aux u {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 2px;
+}
+
+.app_container>.header>.aux u {
+    text-decoration-color: #171f48a1;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 3px;
+}
+
+.app_container>.content {
+    flex-grow: 1;
+    overflow: auto;
+    padding-left: 0.25em;
+    padding-top: 0.25em;
+}
+
+.app_container .status {
+    margin-right: 0.25em;
+}
+
